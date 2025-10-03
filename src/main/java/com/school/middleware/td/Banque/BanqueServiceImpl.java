@@ -2,15 +2,16 @@ package com.school.middleware.td.Banque;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.sql.Connection;
+
+import com.school.middleware.td.DbConnection;
 
 public class BanqueServiceImpl extends UnicastRemoteObject implements BanqueService{
 
-    Connection con;
+    DbConnection con;
 
     protected BanqueServiceImpl() throws RemoteException {
         super();
-        //TODO Auto-generated constructor stub
+        this.con=DbConnection.getInstance();
     }
 
     @Override
